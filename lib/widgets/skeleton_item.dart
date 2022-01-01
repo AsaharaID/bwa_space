@@ -46,7 +46,7 @@ class SkeletonItem extends StatelessWidget {
               children: [
                 Shimmer.fromColors(
                   child: Container(
-                    width: 62,
+                    width: 55,
                     height: 42,
                     color: kPurpleColor,
                   ),

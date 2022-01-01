@@ -23,42 +23,53 @@ class _ProfilePageState extends State<ProfilePage> {
       opacity: opacity,
       child: Scaffold(
         backgroundColor: isLightMode ? kWhiteGreyColor : Color(0xff1F1D2B),
-        bottomNavigationBar: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: BottomNavigationBar(
-            showUnselectedLabels: false,
-            showSelectedLabels: false,
-            backgroundColor: isLightMode ? kWhiteColor : kDarkBackgroundColor,
-            onTap: (value) {
-              if (value == 0) {
-                Navigator.pushNamed(context, '/home');
-              } else if (value == 1) {
-                Navigator.pushNamed(context, '/wishlist');
-              }
-            },
-            items: [
-              BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    'assets/home.svg',
-                    width: 24,
-                    color: isLightMode ? kBlackColor : kWhiteColor,
-                  ),
-                  label: 'home'),
-              BottomNavigationBarItem(
-                  icon: Image.asset(
-                    'assets/heart.png',
-                    width: 24,
-                    color: isLightMode ? kBlackColor : kWhiteColor,
-                  ),
-                  label: 'wishlist'),
-              BottomNavigationBarItem(
-                  icon: Image.asset(
-                    'assets/person.png',
-                    color: kPurpleColor,
-                    width: 24,
-                  ),
-                  label: 'profile'),
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: kPurpleColor,
+                blurRadius: 5,
+                offset: Offset(0, 0),
+                blurStyle: BlurStyle.solid,
+              ),
             ],
+          ),
+          child: ClipRRect(
+            child: BottomNavigationBar(
+              showUnselectedLabels: false,
+              showSelectedLabels: false,
+              backgroundColor: isLightMode ? kWhiteColor : kDarkBackgroundColor,
+              onTap: (value) {
+                if (value == 0) {
+                  Navigator.pushNamed(context, '/home');
+                } else if (value == 1) {
+                  Navigator.pushNamed(context, '/wishlist');
+                }
+              },
+              items: [
+                BottomNavigationBarItem(
+                    icon: SvgPicture.asset(
+                      'assets/home.svg',
+                      width: 24,
+                      color: isLightMode ? kBlackColor : kWhiteColor,
+                    ),
+                    label: 'home'),
+                BottomNavigationBarItem(
+                    icon: Image.asset(
+                      'assets/heart.png',
+                      width: 24,
+                      color: isLightMode ? kBlackColor : kWhiteColor,
+                    ),
+                    label: 'wishlist'),
+                BottomNavigationBarItem(
+                    icon: Image.asset(
+                      'assets/person.png',
+                      color: kPurpleColor,
+                      width: 24,
+                    ),
+                    label: 'profile'),
+              ],
+            ),
           ),
         ),
         body: Stack(

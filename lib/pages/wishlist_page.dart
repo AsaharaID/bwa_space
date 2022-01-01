@@ -39,13 +39,12 @@ class _WishlistPageState extends State<WishlistPage> {
               SizedBox(
                 width: 18,
               ),
+              Spacer(),
               Text(
                 'Wishlist',
                 style: blackTextStyle.copyWith(
                   fontSize: 18,
                   fontWeight: semiBold,
-                  decoration: TextDecoration.underline,
-                  decorationColor: kPurpleColor,
                 ),
               ),
               Spacer(),
@@ -57,43 +56,53 @@ class _WishlistPageState extends State<WishlistPage> {
           ),
         ),
       ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: BottomNavigationBar(
-          showUnselectedLabels: false,
-          showSelectedLabels: false,
-          backgroundColor: kWhiteColor,
-          onTap: (value) {
-            if (value == 0) {
-              Navigator.pushNamed(context, '/home');
-            } else if (value == 2) {
-              Navigator.pushNamed(context, '/profile');
-            }
-          },
-          items: [
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  'assets/home.svg',
-                  width: 24,
-                ),
-                label: 'home'),
-            BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/heart.png',
-                  color: kPurpleColor,
-                  width: 24,
-                ),
-                label: 'wishlist'),
-            BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/person.png',
-                  width: 24,
-                ),
-                label: 'profile'),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: kPurpleColor,
+              blurRadius: 5,
+              offset: Offset(0, 0),
+              blurStyle: BlurStyle.solid,
+            ),
           ],
         ),
+        child: ClipRRect(
+          child: BottomNavigationBar(
+            showUnselectedLabels: false,
+            showSelectedLabels: false,
+            backgroundColor: kWhiteColor,
+            onTap: (value) {
+              if (value == 0) {
+                Navigator.pushNamed(context, '/home');
+              } else if (value == 2) {
+                Navigator.pushNamed(context, '/profile');
+              }
+            },
+            items: [
+              BottomNavigationBarItem(
+                  icon: SvgPicture.asset(
+                    'assets/home.svg',
+                    width: 24,
+                  ),
+                  label: 'home'),
+              BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/heart.png',
+                    color: kPurpleColor,
+                    width: 24,
+                  ),
+                  label: 'wishlist'),
+              BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/person.png',
+                    width: 24,
+                  ),
+                  label: 'profile'),
+            ],
+          ),
+        ),
       ),
-      
       body: ListView(
         padding: EdgeInsets.symmetric(
           horizontal: 24,
@@ -106,7 +115,7 @@ class _WishlistPageState extends State<WishlistPage> {
           SizedBox(
             height: 30,
           ),
-        ],  
+        ],
       ),
     );
   }

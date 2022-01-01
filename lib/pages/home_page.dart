@@ -21,43 +21,53 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kWhiteGreyColor,
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: BottomNavigationBar(
-          showUnselectedLabels: false,
-          showSelectedLabels: false,
-          backgroundColor: kWhiteColor,
-          onTap: (value) {
-            if (value == 1) {
-              Navigator.pushNamed(context, '/wishlist');
-            } else if (value == 2) {
-              Navigator.pushNamed(context, '/profile');
-            }
-          },
-          items: [
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                  'assets/home.svg',
-                  color: kPurpleColor,
-                  width: 24,
-                ),
-                label: 'home'),
-            BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/heart.png',
-                  width: 24,
-                ),
-                label: 'wishlist'),
-            BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/person.png',
-                  width: 24,
-                ),
-                label: 'profile'),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: kPurpleColor,
+              blurRadius: 5,
+              offset: Offset(0, 0),
+              blurStyle: BlurStyle.solid,
+            ),
           ],
         ),
+        child: ClipRRect(
+          child: BottomNavigationBar(
+            showUnselectedLabels: false,
+            showSelectedLabels: false,
+            backgroundColor: kWhiteColor,
+            onTap: (value) {
+              if (value == 1) {
+                Navigator.pushNamed(context, '/wishlist');
+              } else if (value == 2) {
+                Navigator.pushNamed(context, '/profile');
+              }
+            },
+            items: [
+              BottomNavigationBarItem(
+                  icon: SvgPicture.asset(
+                    'assets/home.svg',
+                    color: kPurpleColor,
+                    width: 24,
+                  ),
+                  label: 'home'),
+              BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/heart.png',
+                    width: 24,
+                  ),
+                  label: 'wishlist'),
+              BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/person.png',
+                    width: 24,
+                  ),
+                  label: 'profile'),
+            ],
+          ),
+        ),
       ),
-      
       body: Stack(
         children: [
           Image.asset(
