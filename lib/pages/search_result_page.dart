@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_literals_to_create_immutables, duplicate_ignore
 
 import 'package:bwa_space/widgets/product_grid_item.dart';
 import 'package:bwa_space/widgets/product_list_item.dart';

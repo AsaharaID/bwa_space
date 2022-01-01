@@ -20,7 +20,7 @@ class SkeletonItem extends StatelessWidget {
             Shimmer.fromColors(
               child: Container(
                 width: double.infinity,
-                height: 122,
+                height: 120,
                 color: kPurpleColor,
               ),
               baseColor: kLineDarkColor,
@@ -46,7 +46,7 @@ class SkeletonItem extends StatelessWidget {
               children: [
                 Shimmer.fromColors(
                   child: Container(
-                    width: 55,
+                    width: 40,
                     height: 42,
                     color: kPurpleColor,
                   ),
@@ -59,8 +59,8 @@ class SkeletonItem extends StatelessWidget {
                       shape: BoxShape.circle,
                       color: kPurpleColor,
                     ),
-                    width: 44,
-                    height: 44,
+                    width: 40,
+                    height: 40,
                   ),
                   baseColor: kLineDarkColor,
                   highlightColor: kWhiteGreyColor,

@@ -29,7 +29,7 @@ class _WishlistPageState extends State<WishlistPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size(double.infinity, 60),
+        preferredSize: Size(double.infinity, 40),
         child: AppBar(
           elevation: 0,
           backgroundColor: kWhiteColor,

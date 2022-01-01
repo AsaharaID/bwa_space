@@ -27,13 +27,13 @@ class ProductGridItem extends StatelessWidget {
       ),
       child: Container(
         width: (MediaQuery.of(context).size.width - 70) / 2,
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
               imageUrl,
-              height: 200,
+              height: 120,
             ),
             SizedBox(
               height: 22,

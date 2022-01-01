@@ -19,7 +19,7 @@ class HomeCategoryItem extends StatelessWidget {
       onTap: (){
         Navigator.pushNamed(context, '/category');
       },
-      child: Container(
+      child: SizedBox(
         height: 123,
         width: MediaQuery.of(context).size.width - (2 * 24),
         child: Stack(
