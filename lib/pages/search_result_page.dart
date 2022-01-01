@@ -48,7 +48,7 @@ class _SearchResultPageState extends State<SearchResultPage> {
                   },
                   child: Icon(
                     Icons.chevron_left,
-                    color: kBlackColor,
+                    color: kPurpleColor,
                   ),
                 ),
                 SizedBox(
@@ -78,7 +78,7 @@ class _SearchResultPageState extends State<SearchResultPage> {
                         ),
                         Icon(
                           Icons.close,
-                          color: kGrayColor,
+                          color: kPurpleColor,
                         ),
                       ],
                     ),

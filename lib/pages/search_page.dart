@@ -24,7 +24,7 @@ class SearchPage extends StatelessWidget {
                 },
                 child: Icon(
                   Icons.chevron_left,
-                  color: kBlackColor,
+                  color: kPurpleColor,
                 ),
               ),
               SizedBox(
@@ -54,7 +54,7 @@ class SearchPage extends StatelessWidget {
                       ),
                       Icon(
                         Icons.close,
-                        color: kGrayColor,
+                        color: kPurpleColor,
                       ),
                     ],
                   ),

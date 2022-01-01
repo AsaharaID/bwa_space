@@ -12,6 +12,7 @@ Color kRedColor = Color(0xffFF314A);
 Color kYellowColor = Color(0xffFFBA00);
 Color kBlueColor = Color(0xff2972FF);
 Color kPurpleColor = Color(0xffDC00B8);
+Color kDarkBackgroundColor = Color(0xff252836);
 
 TextStyle blackTextStyle = GoogleFonts.nunito(
   color: kBlackColor,
@@ -50,3 +51,5 @@ FontWeight regular = FontWeight.w400;
 FontWeight medium = FontWeight.w500;
 FontWeight semiBold = FontWeight.w600;
 FontWeight bold = FontWeight.w700;
+
+

@@ -33,6 +33,7 @@ class ProductGridItem extends StatelessWidget {
           children: [
             Image.asset(
               imageUrl,
+              height: 200,
             ),
             SizedBox(
               height: 22,

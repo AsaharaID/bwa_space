@@ -27,10 +27,18 @@ class _HomePageState extends State<HomePage> {
           showUnselectedLabels: false,
           showSelectedLabels: false,
           backgroundColor: kWhiteColor,
+          onTap: (value) {
+            if (value == 1) {
+              Navigator.pushNamed(context, '/wishlist');
+            } else if (value == 2) {
+              Navigator.pushNamed(context, '/profile');
+            }
+          },
           items: [
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(
                   'assets/home.svg',
+                  color: kPurpleColor,
                   width: 24,
                 ),
                 label: 'home'),
@@ -49,6 +57,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      
       body: Stack(
         children: [
           Image.asset(
@@ -139,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Text(
                       'Show All',
-                      style: blackTextStyle,
+                      style: purpleTextStyle,
                     ),
                   ],
                 ),
@@ -252,7 +261,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Text(
                             'Show All',
-                            style: blackTextStyle,
+                            style: purpleTextStyle,
                           ),
                         ],
                       ),
