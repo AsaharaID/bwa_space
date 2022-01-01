@@ -1,6 +1,6 @@
 # bwa_space
 
-A new Flutter project.
+Flutter Project about online furniture shop
 
 ## Getting Started
 
