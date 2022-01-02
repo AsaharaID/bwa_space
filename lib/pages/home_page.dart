@@ -1,11 +1,15 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, duplicate_ignore
 
+import 'package:bwa_space/pages/profile_page.dart';
+import 'package:bwa_space/pages/search_page.dart';
+import 'package:bwa_space/pages/wishlist_page.dart';
 import 'package:bwa_space/theme.dart';
 import 'package:bwa_space/widgets/home_category_item.dart';
 import 'package:bwa_space/widgets/home_popular_item.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:page_transition/page_transition.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -39,9 +43,21 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: kWhiteColor,
             onTap: (value) {
               if (value == 1) {
-                Navigator.pushNamed(context, '/wishlist');
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    child: WishlistPage(),
+                  ),
+                );
               } else if (value == 2) {
-                Navigator.pushNamed(context, '/profile');
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    child: ProfilePage(),
+                  ),
+                );
               }
             },
             items: [
@@ -107,7 +123,13 @@ class _HomePageState extends State<HomePage> {
               //NOTE : Search Bar
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/search');
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.fade,
+                      child: SearchPage(),
+                    ),
+                  );
                 },
                 child: Container(
                   margin: EdgeInsets.only(

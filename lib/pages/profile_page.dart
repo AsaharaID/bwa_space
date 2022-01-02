@@ -1,9 +1,12 @@
 import 'dart:async';
 
+import 'package:bwa_space/pages/home_page.dart';
+import 'package:bwa_space/pages/wishlist_page.dart';
 import 'package:bwa_space/widgets/profile_menu_item.dart';
 import 'package:flutter/material.dart';
 import 'package:bwa_space/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -19,7 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return AnimatedOpacity(
-      duration: Duration(milliseconds: 100),
+      duration: Duration(milliseconds: 200),
       opacity: opacity,
       child: Scaffold(
         backgroundColor: isLightMode ? kWhiteGreyColor : Color(0xff1F1D2B),
@@ -41,9 +44,21 @@ class _ProfilePageState extends State<ProfilePage> {
               backgroundColor: isLightMode ? kWhiteColor : kDarkBackgroundColor,
               onTap: (value) {
                 if (value == 0) {
-                  Navigator.pushNamed(context, '/home');
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.fade,
+                      child: HomePage(),
+                    ),
+                  );
                 } else if (value == 1) {
-                  Navigator.pushNamed(context, '/wishlist');
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.fade,
+                      child: WishlistPage(),
+                    ),
+                  );
                 }
               },
               items: [
@@ -119,7 +134,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             opacity = 0;
                           });
 
-                          Timer(Duration(milliseconds: 100), () {
+                          Timer(Duration(milliseconds: 200), () {
                             setState(() {
                               opacity = 1;
                             });
@@ -136,7 +151,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 : kDarkBackgroundColor,
                           ),
                           child: AnimatedAlign(
-                            duration: Duration(milliseconds: 100),
+                            duration: Duration(milliseconds: 200),
                             alignment: isLightMode
                                 ? Alignment.centerLeft
                                 : Alignment.centerRight,

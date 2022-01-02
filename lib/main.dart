@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:bwa_space/pages/category_page.dart';
+import 'package:bwa_space/pages/detail_page.dart';
 import 'package:bwa_space/pages/home_page.dart';
 import 'package:bwa_space/pages/onboarding_page.dart';
 import 'package:bwa_space/pages/profile_page.dart';
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
         '/search-result': (context) => SearchResultPage(),
         '/category' : (context) => CategoryPage(),
         '/wishlist' : (context) => WishlistPage(),
-        '/profile' : (context) => ProfilePage()
+        '/profile' : (context) => ProfilePage(),
+        '/detail' : (context) => DetailPage(),
       },
     );
   }

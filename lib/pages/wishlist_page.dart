@@ -1,8 +1,11 @@
+import 'package:bwa_space/pages/home_page.dart';
+import 'package:bwa_space/pages/profile_page.dart';
 import 'package:bwa_space/theme.dart';
 import 'package:bwa_space/widgets/product_grid_item.dart';
 import 'package:bwa_space/widgets/skeleton_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:page_transition/page_transition.dart';
 
 class WishlistPage extends StatefulWidget {
   const WishlistPage({Key? key}) : super(key: key);
@@ -74,9 +77,21 @@ class _WishlistPageState extends State<WishlistPage> {
             backgroundColor: kWhiteColor,
             onTap: (value) {
               if (value == 0) {
-                Navigator.pushNamed(context, '/home');
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    child: HomePage(),
+                  ),
+                );
               } else if (value == 2) {
-                Navigator.pushNamed(context, '/profile');
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    child: ProfilePage(),
+                  ),
+                );
               }
             },
             items: [
